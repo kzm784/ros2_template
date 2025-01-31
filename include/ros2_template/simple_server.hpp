@@ -1,8 +1,9 @@
 #ifndef ROS2_TEMPLATE__SIMPLE_SERVER_
 #define ROS2_TEMPLATE__SIMPLE_SERVER_
 
+#include <thread>
 #include <rclcpp/rclcpp.hpp>
-#include <example_interfaces/srv/add_two_ints.hpp>
+#include "std_srvs/srv/set_bool.hpp"
 
 class SimpleServer : public rclcpp::Node
 {
@@ -11,10 +12,10 @@ public:
 
 private:
     void handleService(
-        const example_interfaces::srv::AddTwoInts::Request::SharedPtr request,
-        const example_interfaces::srv::AddTwoInts::Response::SharedPtr response);
+        const std_srvs::srv::SetBool::Request::SharedPtr request,
+        const std_srvs::srv::SetBool::Response::SharedPtr response);
     
-    rclcpp::Service<example_interfaces::srv::AddTwoInts>::SharedPtr server_;
+    rclcpp::Service<std_srvs::srv::SetBool>::SharedPtr server_;
 };
 
 #endif  // ROS2_TEMPLATE__SIMPLE_SERVER_

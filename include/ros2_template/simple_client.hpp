@@ -4,7 +4,7 @@
 #include <chrono>
 
 #include <rclcpp/rclcpp.hpp>
-#include <example_interfaces/srv/add_two_ints.hpp>
+#include <std_srvs/srv/set_bool.hpp>
 
 class SimpleClient : public rclcpp::Node
 {
@@ -12,9 +12,9 @@ public:
     explicit SimpleClient(const rclcpp::NodeOptions &options);
 
 private:
-    void sendRequest(int64_t a, int64_t b);
+    void sendRequest(bool data);
 
-    rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr client_;
+    rclcpp::Client<std_srvs::srv::SetBool>::SharedPtr client_;
 };
 
 #endif  // ROS2_TEMPLATE__SIMPLE_CLIENT_

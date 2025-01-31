@@ -11,7 +11,7 @@
    
   <depend>rclcpp</depend>
   <depend>rclcpp_components</depend>
-  <depend>example_interfaces</depend>
+  <depend>std_srvs</depend>
 
   <exec_depend>launch_ros</exec_depend>
 
